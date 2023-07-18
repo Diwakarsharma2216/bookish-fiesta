@@ -1,11 +1,21 @@
 const express=require("express")
 const { connection } = require("mongoose")
+const { AuthRouter } = require("./routes/Auth.routes")
+const { carRouter } = require("./routes/Car.routes")
+const { specificationRouter } = require("./routes/specification.routes")
 const app=express()
 require("dotenv").config()
 app.use(express.json())
 
+// ### userRouter ####
+app.use("/users",AuthRouter)
 
 
+// ### userRouter ####
+app.use("/car",carRouter)
+
+// ### specification ####
+app.use("/specification",specificationRouter)
 
 app.listen(process.env.PORT,async()=>{
     try {
