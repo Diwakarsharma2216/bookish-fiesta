@@ -14,13 +14,13 @@ const userSchema=Schema({
       password: {
         type: String,
         required: true,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-      }
+       },
+      // createdAt: {
+      //   type: Date,
+      //   default: Date.now,
+      // }
 })
 
-const UserModel=model("User",userSchema)
+const UserModel=model("user",userSchema)
 
 module.exports={UserModel}
